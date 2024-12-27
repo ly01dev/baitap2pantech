@@ -1,0 +1,89 @@
+// Yêu cầu:
+// Tạo một thanh điều hướng (navbar) đơn giản gồm:
+// Logo ở bên trái.
+// Các liên kết điều hướng (Home, About, Services, Contact) ở bên phải.
+// Sử dụng SCSS để:
+// Thiết kế navbar cố định ở trên cùng.
+// Khi hover vào các liên kết, thay đổi màu nền và gạch chân.
+*{
+    box-sizing: border-box;
+}
+html{
+    font-size: 62,5%;
+}
+// biến chung
+$color-change: rgb(255, 0, 0);
+$back-color: #636305;
+$font: "Poppins", serif;
+@mixin menu($width){
+    position: absolute;
+            content: "";
+            height: 3px;
+            width: $width;
+            background-color: $back-color;
+            bottom: 3px;
+            left: 16px;
+            transition: width 0.3s ease-in-out;
+}
+
+body{
+    font-family: $font;
+    height: 1000vh;
+    background-color: #fff;
+}
+.header-fix{
+    background-color: #e0dfdf;
+    padding: 10px 0;
+    position: sticky;
+    top: -10px;
+
+}
+.header-space{
+    width: 1107px;
+    margin: auto;
+    max-width: calc(100% - 48px);
+}
+.header-menu{
+    display: flex;
+    align-items: center;
+    .logo{
+        height: 80px;
+        width: 160px;
+    }
+    nav{
+        margin-left: auto;
+
+    }
+    nav ul{
+        display: flex;
+        li a{
+            position: relative;
+            display: inline-block;
+            text-decoration: none;
+            padding: 8px 16px;
+            font-size: 1.1rem;
+            color: black;
+            transition: 0.5s;
+        }
+        li a::after{
+            @include menu(0)
+        }
+        li a:hover{
+            color: $color-change;
+        }
+        li a:hover::after{
+            @include menu(70%)
+        }
+
+        }
+        li .active{
+            position: relative;
+            color: $color-change;
+        
+        }
+        .active::after{
+            
+                @include menu(70%)
+        }
+
+    }

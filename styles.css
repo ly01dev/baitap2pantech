@@ -1,0 +1,89 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62, 5%;
+}
+
+body {
+  font-family: "Poppins", serif;
+  height: 1000vh;
+  background-color: #fff;
+}
+
+.header-fix {
+  background-color: #e0dfdf;
+  padding: 10px 0;
+  position: sticky;
+  top: -10px;
+}
+
+.header-space {
+  width: 1107px;
+  margin: auto;
+  max-width: calc(100% - 48px);
+}
+
+.header-menu {
+  display: flex;
+  align-items: center;
+}
+.header-menu .logo {
+  height: 80px;
+  width: 160px;
+}
+.header-menu nav {
+  margin-left: auto;
+}
+.header-menu nav ul {
+  display: flex;
+}
+.header-menu nav ul li a {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  padding: 8px 16px;
+  font-size: 1.1rem;
+  color: black;
+  transition: 0.5s;
+}
+.header-menu nav ul li a::after {
+  position: absolute;
+  content: "";
+  height: 3px;
+  width: 0;
+  background-color: #636305;
+  bottom: 3px;
+  left: 16px;
+  transition: width 0.3s ease-in-out;
+}
+.header-menu nav ul li a:hover {
+  color: rgb(255, 0, 0);
+}
+.header-menu nav ul li a:hover::after {
+  position: absolute;
+  content: "";
+  height: 3px;
+  width: 70%;
+  background-color: #636305;
+  bottom: 3px;
+  left: 16px;
+  transition: width 0.3s ease-in-out;
+}
+.header-menu li .active {
+  position: relative;
+  color: rgb(255, 0, 0);
+}
+.header-menu .active::after {
+  position: absolute;
+  content: "";
+  height: 3px;
+  width: 70%;
+  background-color: #636305;
+  bottom: 3px;
+  left: 16px;
+  transition: width 0.3s ease-in-out;
+}
+
+/*# sourceMappingURL=styles.css.map */
